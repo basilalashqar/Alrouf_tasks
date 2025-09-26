@@ -1,0 +1,59 @@
+Alrouf Lighting Technology - Installation Guide
+
+General Installation Requirements:
+
+1. Safety Precautions
+   - Always disconnect power before installation
+   - Use appropriate safety equipment (helmet, safety harness)
+   - Follow local electrical codes and regulations
+   - Ensure proper grounding of all electrical connections
+
+2. Site Preparation
+   - Clear installation area of obstacles
+   - Mark pole locations according to lighting plan
+   - Ensure adequate foundation depth (minimum 1.5m for 8m poles)
+   - Check for underground utilities before digging
+
+3. Foundation Requirements
+   - Concrete foundation: 40cm x 40cm x 150cm minimum
+   - Use C25 concrete mix
+   - Allow 7 days curing time before pole installation
+   - Install anchor bolts according to pole specifications
+
+4. Pole Installation
+   - Use crane or appropriate lifting equipment
+   - Secure pole to foundation with anchor bolts
+   - Ensure pole is plumb (vertical alignment)
+   - Install electrical conduit before pole erection
+
+5. Electrical Connections
+   - Use weatherproof junction boxes
+   - Follow electrical wiring diagrams provided
+   - Test all connections before energizing
+   - Install appropriate circuit protection
+
+6. LED Fixture Installation
+   - Mount fixture according to manufacturer specifications
+   - Ensure proper heat dissipation
+   - Connect electrical connections securely
+   - Test fixture operation
+
+7. Commissioning
+   - Perform electrical safety tests
+   - Check light output and distribution
+   - Verify control system operation
+   - Document installation details
+
+Maintenance Schedule:
+- Monthly: Visual inspection of fixtures and poles
+- Quarterly: Electrical connection check
+- Annually: Complete system inspection and cleaning
+- As needed: Replace failed components
+
+Troubleshooting Common Issues:
+- No power: Check electrical connections and circuit breakers
+- Dim lighting: Clean fixtures and check voltage
+- Flickering: Check connections and replace if necessary
+- Pole tilt: Check foundation and anchor bolts
+
+For technical support, contact: support@alrouf.com or +966 11 123 4567

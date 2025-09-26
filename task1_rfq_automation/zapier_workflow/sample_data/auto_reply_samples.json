@@ -1,0 +1,16 @@
+{
+  "auto_reply_samples": {
+    "english": {
+      "subject": "RFQ Confirmation - ALR-SL-90W",
+      "body": "Dear Gulf Eng.,\n\nThank you for your interest in Alrouf Lighting Technology products.\n\nWe acknowledge receipt of your RFQ with the following details:\n• Product: ALR-SL-90W (90W Streetlight Pole)\n• Quantity: 120 units\n• Location: Dammam\n• Timeline: 4 weeks\n\nA detailed quotation will be sent to you within 24-48 hours.\n\nFor urgent inquiries, please contact us at:\n• Phone: +966 11 123 4567\n• Email: sales@alrouf.com\n\nWe look forward to working with you.\n\nBest regards,\nSales Team\nAlrouf Lighting Technology"
+    },
+    "arabic": {
+      "subject": "تأكيد استلام طلب عرض السعر - ALR-SL-90W",
+      "body": "السيد/ة Gulf Eng. المحترم/ة،\n\nنشكركم على اهتمامكم بمنتجات شركة الأروف للتكنولوجيا والإضاءة.\n\nنؤكد لكم استلام طلب عرض السعر الخاص بكم:\n• المنتج: ALR-SL-90W (عمود إضاءة 90 واط)\n• الكمية: 120 وحدة\n• الموقع: الدمام\n• الجدول الزمني: 4 أسابيع\n\nسيتم إرسال عرض السعر المفصل إليكم خلال 24-48 ساعة.\n\nللاستفسارات العاجلة، يرجى التواصل معنا على:\n• الهاتف: +966 11 123 4567\n• البريد الإلكتروني: sales@alrouf.com\n\nنتطلع للتعاون معكم.\n\nمع أطيب التحيات،\nفريق المبيعات\nشركة الأروف للتكنولوجيا والإضاءة"
+    },
+    "templates": {
+      "english_template": "Dear {{client_name}},\n\nThank you for your interest in Alrouf Lighting Technology products.\n\nWe acknowledge receipt of your RFQ for:\n• Product: {{product_model}}\n• Quantity: {{quantity}} units\n• Location: {{location}}\n• Timeline: {{timeline}}\n\nA detailed quotation will be sent to you within 24-48 hours.\n\nFor urgent inquiries: sales@alrouf.com or +966 11 123 4567\n\nBest regards,\nSales Team\nAlrouf Lighting Technology",
+      "arabic_template": "السيد/ة {{client_name}} المحترم/ة،\n\nنشكركم على اهتمامكم بمنتجات شركة الأروف للتكنولوجيا والإضاءة.\n\nنؤكد استلام طلب عرض السعر الخاص بكم:\n• المنتج: {{product_model}}\n• الكمية: {{quantity}} وحدة\n• الموقع: {{location}}\n• الجدول الزمني: {{timeline}}\n\nسيتم إرسال عرض السعر المفصل إليكم خلال 24-48 ساعة.\n\nللاستفسارات العاجلة: sales@alrouf.com أو +966 11 123 4567\n\nمع أطيب التحيات،\nفريق المبيعات\nشركة الأروف للتكنولوجيا والإضاءة"
+    }
+  }
+}

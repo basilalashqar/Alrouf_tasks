@@ -1,0 +1,92 @@
+{
+  "salesforce_operations": [
+    {
+      "timestamp": "2024-01-15T10:30:00Z",
+      "operation": "create_opportunity",
+      "status": "success",
+      "data": {
+        "opportunity_id": "OPP-2024-001",
+        "name": "RFQ - ALR-SL-90W - Gulf Eng.",
+        "account_name": "Gulf Engineering",
+        "contact_email": "omar@client.com",
+        "product_model": "ALR-SL-90W",
+        "quantity": 120,
+        "location": "Dammam",
+        "timeline": "4 weeks",
+        "stage": "Prospecting",
+        "amount": 35000,
+        "close_date": "2024-02-15",
+        "lead_source": "Email RFQ"
+      },
+      "response_time_ms": 1250
+    },
+    {
+      "timestamp": "2024-01-15T11:45:00Z",
+      "operation": "create_opportunity",
+      "status": "success",
+      "data": {
+        "opportunity_id": "OPP-2024-002",
+        "name": "RFQ - ALR-SL-120W - Saudi Lighting",
+        "account_name": "Saudi Lighting Co.",
+        "contact_email": "ahmed@saudilight.com",
+        "product_model": "ALR-SL-120W",
+        "quantity": 200,
+        "location": "Riyadh",
+        "timeline": "6 weeks",
+        "stage": "Prospecting",
+        "amount": 75000,
+        "close_date": "2024-03-01",
+        "lead_source": "Email RFQ"
+      },
+      "response_time_ms": 1180
+    },
+    {
+      "timestamp": "2024-01-15T14:20:00Z",
+      "operation": "create_opportunity",
+      "status": "success",
+      "data": {
+        "opportunity_id": "OPP-2024-003",
+        "name": "RFQ - ALR-OBL-12V - Desert Solutions",
+        "account_name": "Desert Solutions",
+        "contact_email": "info@desertsol.com",
+        "product_model": "ALR-OBL-12V",
+        "quantity": 50,
+        "location": "Jeddah",
+        "timeline": "2 weeks",
+        "stage": "Prospecting",
+        "amount": 8500,
+        "close_date": "2024-01-29",
+        "lead_source": "Email RFQ"
+      },
+      "response_time_ms": 1320
+    },
+    {
+      "timestamp": "2024-01-15T16:10:00Z",
+      "operation": "create_opportunity",
+      "status": "success",
+      "data": {
+        "opportunity_id": "OPP-2024-004",
+        "name": "RFQ - ALR-FL-50W - Urban Projects",
+        "account_name": "Urban Projects Ltd.",
+        "contact_email": "contact@urbanpro.com",
+        "product_model": "ALR-FL-50W",
+        "quantity": 75,
+        "location": "Dhahran",
+        "timeline": "3 weeks",
+        "stage": "Prospecting",
+        "amount": 15000,
+        "close_date": "2024-02-05",
+        "lead_source": "Email RFQ"
+      },
+      "response_time_ms": 1100
+    }
+  ],
+  "summary": {
+    "total_operations": 4,
+    "successful_operations": 4,
+    "failed_operations": 0,
+    "average_response_time_ms": 1212.5,
+    "date_range": "2024-01-15",
+    "total_opportunity_value": 133500
+  }
+}

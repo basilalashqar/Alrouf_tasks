@@ -1,0 +1,92 @@
+{
+  "error_log": [
+    {
+      "timestamp": "2024-01-15T10:30:00Z",
+      "workflow": "RFQ_Automation",
+      "step": "salesforce_create",
+      "error_type": "API_TIMEOUT",
+      "error_message": "Salesforce API request timed out after 30 seconds",
+      "retry_count": 2,
+      "status": "failed",
+      "fallback_action": "email_notification_sent",
+      "affected_record": "Gulf Eng. RFQ",
+      "resolution": "Manual opportunity creation required"
+    },
+    {
+      "timestamp": "2024-01-15T11:45:00Z",
+      "workflow": "RFQ_Automation",
+      "step": "google_sheets_write",
+      "error_type": "PERMISSION_DENIED",
+      "error_message": "Insufficient permissions to write to Google Sheets",
+      "retry_count": 1,
+      "status": "failed",
+      "fallback_action": "csv_export_created",
+      "affected_record": "Saudi Lighting RFQ",
+      "resolution": "Sheet permissions updated, retry successful"
+    },
+    {
+      "timestamp": "2024-01-15T14:20:00Z",
+      "workflow": "RFQ_Automation",
+      "step": "openai_extraction",
+      "error_type": "API_QUOTA_EXCEEDED",
+      "error_message": "OpenAI API quota exceeded for the month",
+      "retry_count": 0,
+      "status": "failed",
+      "fallback_action": "regex_extraction_used",
+      "affected_record": "Desert Solutions RFQ",
+      "resolution": "Fallback extraction successful, data quality reduced"
+    },
+    {
+      "timestamp": "2024-01-15T16:10:00Z",
+      "workflow": "RFQ_Automation",
+      "step": "slack_notification",
+      "error_type": "WEBHOOK_FAILURE",
+      "error_message": "Slack webhook URL returned 404 Not Found",
+      "retry_count": 3,
+      "status": "failed",
+      "fallback_action": "email_alert_sent",
+      "affected_record": "Urban Projects RFQ",
+      "resolution": "Slack webhook URL updated, future notifications working"
+    },
+    {
+      "timestamp": "2024-01-15T17:30:00Z",
+      "workflow": "RFQ_Automation",
+      "step": "google_drive_upload",
+      "error_type": "FILE_SIZE_LIMIT",
+      "error_message": "Attachment file size exceeds 25MB limit",
+      "retry_count": 0,
+      "status": "failed",
+      "fallback_action": "compression_attempted",
+      "affected_record": "Large Project RFQ",
+      "resolution": "File compressed and uploaded successfully"
+    }
+  ],
+  "error_summary": {
+    "total_errors": 5,
+    "error_types": {
+      "API_TIMEOUT": 1,
+      "PERMISSION_DENIED": 1,
+      "API_QUOTA_EXCEEDED": 1,
+      "WEBHOOK_FAILURE": 1,
+      "FILE_SIZE_LIMIT": 1
+    },
+    "resolution_status": {
+      "resolved": 4,
+      "pending": 1,
+      "failed": 0
+    },
+    "fallback_actions": {
+      "email_notification_sent": 2,
+      "csv_export_created": 1,
+      "regex_extraction_used": 1,
+      "compression_attempted": 1
+    }
+  },
+  "recommendations": [
+    "Increase Salesforce API timeout to 60 seconds",
+    "Implement automatic retry with exponential backoff",
+    "Set up OpenAI usage monitoring and alerts",
+    "Verify all webhook URLs monthly",
+    "Implement file size validation before upload"
+  ]
+}
