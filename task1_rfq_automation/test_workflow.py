@@ -184,5 +184,9 @@ def main():
     print("4. Monitor the automation in Zapier dashboard")
     print("=" * 60)
 
+def run_workflow_simulation():
+    """Run the complete workflow simulation"""
+    return main()
+
 if __name__ == "__main__":
-    main()
+    run_workflow_simulation()
