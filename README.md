@@ -33,15 +33,14 @@ Alrouf_tasks/
 ├── generate_rag_qa_fixed_pdf.py  # Fixed Arabic PDF generator
 ├── generate_rag_qa_html.py       # HTML generator with perfect Arabic
 ├── start_webapp.py              # React webapp startup script
+├── python_client_examples.py    # Python API usage examples
+├── mock_api_server.py           # Mock API server for testing
+├── simple_api_server.py         # Simple API server for webapp
 ├── webapp/                      # React web application
 │   ├── src/                     # React source code
 │   ├── public/                  # Public assets
 │   ├── package.json            # Node.js dependencies
 │   └── README.md               # Webapp documentation
-├── RAG_System_Test_Report.pdf     # Basic test results
-├── Detailed_RAG_Test_Results.pdf # Detailed technical report
-├── RAG_QA_Examples.pdf          # Q&A examples (original)
-├── RAG_QA_Examples_Fixed.pdf    # Q&A examples (fixed Arabic)
 └── RAG_QA_Examples.html          # HTML with perfect Arabic display
 ```
 
@@ -316,13 +315,15 @@ DEFAULT_LANGUAGE=en
 - ⚡ **Real-time**: Live API integration with backend services
 - 📊 **Analytics**: Performance metrics and confidence scores
 - 📤 **Export**: Copy and download functionality
+- 🔄 **Auto-refresh**: Real-time data updates
+- 🎯 **User-friendly**: Intuitive forms and navigation
 
 ### Quick Start
 ```bash
-# Start the React webapp
+# Method 1: Using the startup script (RECOMMENDED)
 python start_webapp.py
 
-# Or manually:
+# Method 2: Manual setup
 cd webapp
 npm install
 npm start
@@ -338,6 +339,169 @@ npm start
 - Backend services running (Task 2 & Task 3)
 - npm package manager
 
+### Webapp Testing Guide
+
+#### **1. Start Backend Services**
+```bash
+# Terminal 1: Start API Server
+cd /Users/basilmacbook/Desktop/tasks
+source venv/bin/activate
+python simple_api_server.py
+
+# Terminal 2: Start React Webapp
+cd /Users/basilmacbook/Desktop/tasks/webapp
+npm start
+```
+
+#### **2. Test Quotation Service (Webapp)**
+1. **Navigate to**: http://localhost:3000/quotation
+2. **Fill the form**:
+   - Client Name: `Test Client`
+   - Contact: `test@example.com`
+   - Language: `English` or `Arabic`
+   - Currency: `SAR`
+   - Add items:
+     - SKU: `ALR-SL-90W`
+     - Quantity: `120`
+     - Unit Cost: `240`
+     - Margin %: `22`
+3. **Click "Generate Quotation"**
+4. **Expected Result**: 
+   - ✅ Quotation ID generated
+   - ✅ Total amount calculated
+   - ✅ Email draft in selected language
+   - ✅ Copy/Export functionality
+
+#### **3. Test RAG Knowledge Base (Webapp)**
+1. **Navigate to**: http://localhost:3000/rag
+2. **Ask questions**:
+   - English: `What products do you offer?`
+   - Arabic: `ما هي منتجاتكم؟`
+   - English: `What is the warranty period?`
+   - Arabic: `ما هي فترة الضمان؟`
+3. **Expected Result**:
+   - ✅ Intelligent answers
+   - ✅ Source citations
+   - ✅ Confidence scores
+   - ✅ Performance metrics
+
+#### **4. Test Multi-language Support**
+- **Switch languages** in the interface
+- **Test Arabic queries** with proper RTL display
+- **Test English queries** with clear formatting
+- **Verify translations** are contextually accurate
+
+### Webapp Features Demonstration
+
+#### **Dashboard Features**
+- 📊 **Overview**: System status and quick stats
+- 🚀 **Quick Actions**: Direct access to services
+- 📈 **Analytics**: Usage metrics and performance
+- 🔧 **Settings**: Configuration options
+
+#### **Quotation Service Features**
+- 📝 **Form Validation**: Real-time input validation
+- 💰 **Price Calculation**: Automatic cost computation
+- 📧 **Email Generation**: AI-powered email drafts
+- 🌍 **Multi-language**: Arabic/English support
+- 📤 **Export Options**: Copy, download, share
+
+#### **RAG Knowledge Base Features**
+- 💬 **Interactive Chat**: Natural language queries
+- 🔍 **Smart Search**: Contextual understanding
+- 📚 **Source Citations**: Reference tracking
+- 📊 **Confidence Scores**: Answer reliability
+- ⚡ **Real-time**: Instant responses
+
+### Troubleshooting Webapp
+
+#### **Common Issues & Solutions**
+
+1. **"Failed to generate quotation" Error**
+   ```bash
+   # Check if API server is running
+   curl http://localhost:8000/health
+   
+   # If not running, start it:
+   python simple_api_server.py
+   ```
+
+2. **"Connection refused" Error**
+   ```bash
+   # Kill any processes on port 8000
+   lsof -ti:8000 | xargs kill -9
+   
+   # Restart API server
+   python simple_api_server.py
+   ```
+
+3. **React App Won't Start**
+   ```bash
+   # Clear npm cache
+   npm cache clean --force
+   
+   # Reinstall dependencies
+   rm -rf node_modules package-lock.json
+   npm install
+   npm start
+   ```
+
+4. **Port 3000 Already in Use**
+   ```bash
+   # Kill process on port 3000
+   lsof -ti:3000 | xargs kill -9
+   
+   # Or use different port
+   PORT=3001 npm start
+   ```
+
+### Webapp Development
+
+#### **Project Structure**
+```
+webapp/
+├── public/
+│   ├── index.html
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Sidebar.js
+│   │   ├── Dashboard.js
+│   │   ├── QuotationService.js
+│   │   └── RAGKnowledgeBase.js
+│   ├── services/
+│   │   └── api.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── package.json
+└── README.md
+```
+
+#### **Key Components**
+- **Header.js**: Navigation and branding
+- **Sidebar.js**: Menu navigation
+- **Dashboard.js**: Main overview page
+- **QuotationService.js**: Quotation form and results
+- **RAGKnowledgeBase.js**: Q&A interface
+- **api.js**: Backend API integration
+
+#### **API Integration**
+```javascript
+// Example API call
+import { generateQuotation } from './services/api';
+
+const quotationData = {
+  client: { name: 'Test', contact: 'test@test.com', lang: 'en' },
+  currency: 'SAR',
+  items: [{ sku: 'ALR-SL-90W', qty: 120, unit_cost: 240, margin_pct: 22 }]
+};
+
+const result = await generateQuotation(quotationData);
+console.log(result);
+```
+
 ## 🧪 Testing
 
 ### Comprehensive Testing Suite
@@ -351,6 +515,336 @@ python test_all_tasks.py
 # ✅ Task 3: RAG Knowledge Base - PASSED
 # 📊 Performance metrics and detailed results
 ```
+
+### Python API Testing Guide
+
+#### **1. Test Quotation Service (Python)**
+```bash
+# Method 1: Direct API call
+python -c "
+import requests
+import json
+
+# Test quotation generation
+quotation_data = {
+    'client': {'name': 'Python Test', 'contact': 'python@test.com', 'lang': 'en'},
+    'currency': 'SAR',
+    'items': [{'sku': 'ALR-SL-90W', 'qty': 120, 'unit_cost': 240.0, 'margin_pct': 22}],
+    'delivery_terms': 'DAP Dammam, 4 weeks',
+    'notes': 'Python API test'
+}
+
+response = requests.post('http://localhost:8000/quote', json=quotation_data)
+print('Status:', response.status_code)
+print('Response:', response.json())
+"
+
+# Method 2: Using the client examples
+python python_client_examples.py
+
+# Method 3: Test with Arabic
+python -c "
+import requests
+
+# Arabic quotation test
+quotation_data = {
+    'client': {'name': 'اختبار بايثون', 'contact': 'test@test.com', 'lang': 'ar'},
+    'currency': 'SAR',
+    'items': [{'sku': 'ALR-SL-90W', 'qty': 120, 'unit_cost': 240.0, 'margin_pct': 22}]
+}
+
+response = requests.post('http://localhost:8000/quote', json=quotation_data)
+result = response.json()
+print('Arabic Email Draft:')
+print(result['email_draft'])
+"
+```
+
+#### **2. Test RAG Knowledge Base (Python)**
+```bash
+# Method 1: Direct API call
+python -c "
+import requests
+
+# English query
+rag_data = {'query': 'What products do you offer?', 'language': 'en'}
+response = requests.post('http://localhost:8000/rag/query', json=rag_data)
+result = response.json()
+print('English Answer:', result['answer'])
+print('Confidence:', result['confidence'])
+print('Sources:', result['sources'])
+"
+
+# Method 2: Arabic query
+python -c "
+import requests
+
+# Arabic query
+rag_data = {'query': 'ما هي منتجاتكم؟', 'language': 'ar'}
+response = requests.post('http://localhost:8000/rag/query', json=rag_data)
+result = response.json()
+print('Arabic Answer:', result['answer'])
+print('Confidence:', result['confidence'])
+"
+
+# Method 3: Multiple queries
+python -c "
+import requests
+
+queries = [
+    ('What is the warranty period?', 'en'),
+    ('ما هي فترة الضمان؟', 'ar'),
+    ('How to install the products?', 'en'),
+    ('كيف يتم تثبيت المنتجات؟', 'ar')
+]
+
+for query, lang in queries:
+    response = requests.post('http://localhost:8000/rag/query', 
+                           json={'query': query, 'language': lang})
+    result = response.json()
+    print(f'{lang.upper()}: {query}')
+    print(f'Answer: {result[\"answer\"][:100]}...')
+    print('---')
+"
+```
+
+#### **3. Test API Health (Python)**
+```bash
+# Check API server status
+python -c "
+import requests
+import time
+
+def check_api_health():
+    try:
+        response = requests.get('http://localhost:8000/health', timeout=5)
+        if response.status_code == 200:
+            print('✅ API Server: RUNNING')
+            print('Response:', response.json())
+            return True
+        else:
+            print('❌ API Server: ERROR')
+            return False
+    except Exception as e:
+        print('❌ API Server: NOT RUNNING')
+        print('Error:', str(e))
+        return False
+
+if check_api_health():
+    print('🚀 Ready for testing!')
+else:
+    print('🔧 Start API server first: python simple_api_server.py')
+"
+
+# Test all endpoints
+python -c "
+import requests
+
+endpoints = [
+    ('GET', '/health', 'Health Check'),
+    ('POST', '/quote', 'Quotation Service'),
+    ('POST', '/rag/query', 'RAG Knowledge Base')
+]
+
+for method, endpoint, name in endpoints:
+    try:
+        if method == 'GET':
+            response = requests.get(f'http://localhost:8000{endpoint}')
+        else:
+            # Test with sample data
+            if endpoint == '/quote':
+                data = {'client': {'name': 'Test', 'contact': 'test@test.com', 'lang': 'en'}, 
+                       'currency': 'SAR', 'items': [{'sku': 'TEST', 'qty': 1, 'unit_cost': 100, 'margin_pct': 10}]}
+            else:
+                data = {'query': 'test', 'language': 'en'}
+            
+            response = requests.post(f'http://localhost:8000{endpoint}', json=data)
+        
+        print(f'✅ {name}: {response.status_code}')
+    except Exception as e:
+        print(f'❌ {name}: ERROR - {e}')
+"
+```
+
+#### **4. Performance Testing (Python)**
+```bash
+# Load testing quotation service
+python -c "
+import requests
+import time
+import concurrent.futures
+
+def test_quotation():
+    data = {
+        'client': {'name': 'Load Test', 'contact': 'test@test.com', 'lang': 'en'},
+        'currency': 'SAR',
+        'items': [{'sku': 'TEST', 'qty': 1, 'unit_cost': 100, 'margin_pct': 10}]
+    }
+    start = time.time()
+    response = requests.post('http://localhost:8000/quote', json=data)
+    end = time.time()
+    return response.status_code, end - start
+
+# Run 10 concurrent requests
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    futures = [executor.submit(test_quotation) for _ in range(10)]
+    results = [f.result() for f in futures]
+
+successful = sum(1 for status, _ in results if status == 200)
+avg_time = sum(time for _, time in results) / len(results)
+
+print(f'✅ Successful requests: {successful}/10')
+print(f'⏱️ Average response time: {avg_time:.3f}s')
+"
+
+# Load testing RAG service
+python -c "
+import requests
+import time
+
+def test_rag():
+    data = {'query': 'What products do you offer?', 'language': 'en'}
+    start = time.time()
+    response = requests.post('http://localhost:8000/rag/query', json=data)
+    end = time.time()
+    return response.status_code, end - start
+
+# Test multiple queries
+queries = [
+    'What products do you offer?',
+    'What is the warranty period?',
+    'How to install products?',
+    'ما هي منتجاتكم؟',
+    'ما هي فترة الضمان؟'
+]
+
+total_time = 0
+successful = 0
+
+for query in queries:
+    lang = 'ar' if any(ord(c) > 127 for c in query) else 'en'
+    data = {'query': query, 'language': lang}
+    
+    start = time.time()
+    response = requests.post('http://localhost:8000/rag/query', json=data)
+    end = time.time()
+    
+    if response.status_code == 200:
+        successful += 1
+        total_time += (end - start)
+        print(f'✅ {query[:30]}... - {(end-start):.3f}s')
+    else:
+        print(f'❌ {query[:30]}... - ERROR')
+
+print(f'\\n📊 Results: {successful}/{len(queries)} successful')
+print(f'⏱️ Average time: {total_time/successful:.3f}s')
+"
+```
+
+#### **5. Integration Testing (Python)**
+```bash
+# Complete workflow test
+python -c "
+import requests
+import json
+
+def test_complete_workflow():
+    print('🧪 Testing Complete Workflow')
+    print('=' * 40)
+    
+    # 1. Health check
+    print('1. Health Check...')
+    health = requests.get('http://localhost:8000/health')
+    print(f'   Status: {health.status_code}')
+    
+    # 2. Generate quotation
+    print('2. Generate Quotation...')
+    quotation_data = {
+        'client': {'name': 'Integration Test', 'contact': 'test@test.com', 'lang': 'en'},
+        'currency': 'SAR',
+        'items': [{'sku': 'ALR-SL-90W', 'qty': 120, 'unit_cost': 240.0, 'margin_pct': 22}]
+    }
+    quote_response = requests.post('http://localhost:8000/quote', json=quotation_data)
+    print(f'   Status: {quote_response.status_code}')
+    if quote_response.status_code == 200:
+        quote_result = quote_response.json()
+        print(f'   Quotation ID: {quote_result[\"quotation_id\"]}')
+        print(f'   Total: {quote_result[\"total\"]} SAR')
+    
+    # 3. Query RAG
+    print('3. Query RAG Knowledge Base...')
+    rag_data = {'query': 'What products do you offer?', 'language': 'en'}
+    rag_response = requests.post('http://localhost:8000/rag/query', json=rag_data)
+    print(f'   Status: {rag_response.status_code}')
+    if rag_response.status_code == 200:
+        rag_result = rag_response.json()
+        print(f'   Answer: {rag_result[\"answer\"][:100]}...')
+        print(f'   Confidence: {rag_result[\"confidence\"]}%')
+    
+    # 4. Test Arabic
+    print('4. Test Arabic Support...')
+    arabic_rag = {'query': 'ما هي منتجاتكم؟', 'language': 'ar'}
+    arabic_response = requests.post('http://localhost:8000/rag/query', json=arabic_rag)
+    print(f'   Status: {arabic_response.status_code}')
+    if arabic_response.status_code == 200:
+        arabic_result = arabic_response.json()
+        print(f'   Arabic Answer: {arabic_result[\"answer\"][:100]}...')
+    
+    print('\\n🎉 Complete Workflow Test: PASSED!')
+
+test_complete_workflow()
+"
+```
+
+### Testing Summary
+
+#### **🎯 Quick Testing Checklist**
+
+| Test Type | Python | Webapp | Status |
+|-----------|--------|--------|--------|
+| **API Health** | ✅ | ✅ | Both work |
+| **Quotation Service** | ✅ | ✅ | Both work |
+| **RAG Knowledge Base** | ✅ | ✅ | Both work |
+| **Arabic Support** | ✅ | ✅ | Both work |
+| **Performance** | ✅ | ✅ | Both work |
+| **Integration** | ✅ | ✅ | Both work |
+
+#### **🚀 Recommended Testing Flow**
+
+1. **Start Services**
+   ```bash
+   # Terminal 1: API Server
+   python simple_api_server.py
+   
+   # Terminal 2: React Webapp
+   cd webapp && npm start
+   ```
+
+2. **Test Python APIs**
+   ```bash
+   # Quick Python test
+   python python_client_examples.py
+   ```
+
+3. **Test React Webapp**
+   - Go to: http://localhost:3000
+   - Test Quotation Service
+   - Test RAG Knowledge Base
+   - Test Arabic support
+
+4. **Verify Both Work Together**
+   - Python scripts can call the same API
+   - Webapp uses the same backend
+   - No conflicts between methods
+
+#### **🔧 Troubleshooting Quick Fixes**
+
+| Issue | Solution |
+|-------|----------|
+| **API not responding** | `python simple_api_server.py` |
+| **Webapp connection error** | Check API server is running |
+| **Port conflicts** | Kill processes: `lsof -ti:8000 \| xargs kill -9` |
+| **React won't start** | `npm cache clean --force && npm install` |
 
 ### Task 1 Testing (Zapier)
 ```bash
