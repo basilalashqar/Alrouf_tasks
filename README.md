@@ -8,7 +8,6 @@
 ## Overview
 
 **Complete automation suite** for Alrouf Lighting Technology featuring:
-- **Task 1**: Zapier RFQ Automation (No-code)
 - **Task 2**: Python Quotation Service + React Webapp
 - **Task 3**: RAG Knowledge Base + React Webapp
 
@@ -364,18 +363,11 @@ npm start
 
 ## Task 1: RFQ Automation (No-Code)
 
-### Overview
-**Zapier workflow** for complete RFQ processing pipeline from email capture to CRM integration.
+### Screenshots
+*[Screenshots of Zapier workflow setup and configuration will be added here]*
 
-### Setup Instructions
-1. **Import Workflow**: Use `task1_rfq_automation/zapier_workflow/workflow_blueprint.json`
-2. **Connect Services**: Gmail, OpenAI, Google Sheets, Salesforce, Google Drive, Slack
-3. **Test Workflow**: `python task1_rfq_automation/test_workflow.py`
-
-### Sample Data
-- **Google Sheets**: `task1_rfq_automation/zapier_workflow/sample_data/google_sheets_sample.csv`
-- **Salesforce Log**: `task1_rfq_automation/zapier_workflow/sample_data/salesforce_mock_log.json`
-- **Auto-Reply Templates**: `task1_rfq_automation/zapier_workflow/sample_data/auto_reply_samples.json`
+### Workflow Blueprint
+*[Zapier workflow blueprint and configuration details will be documented here]*
 
 ### Quick Start Commands
 ```bash
@@ -397,7 +389,6 @@ python python_client_examples.py
 python test_all_tasks.py
 
 # Expected output:
-# Task 1: RFQ Automation (Zapier) - PASSED
 # Task 2: Quotation Service (FastAPI) - PASSED  
 # Task 3: RAG Knowledge Base - PASSED
 ```
@@ -512,7 +503,6 @@ USE_MOCK_SERVICES=False
 
 ## Documentation
 
-- [Task 1 Details](docs/task1_rfq_automation.md)
 - [Task 2 Details](docs/task2_quotation_service.md)
 - [Task 3 Details](docs/task3_rag_knowledge.md)
 
