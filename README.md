@@ -1,26 +1,26 @@
-# Alrouf Lighting Technology - AI Automation Solutions
+# Alrouf Lighting Technology - Task Solutions
 
 [![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com)
 [![OpenAI](https://img.shields.io/badge/OpenAI-API-orange.svg)](https://openai.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🚀 Overview
+## Overview
 
-**Complete AI automation suite** for Alrouf Lighting Technology featuring:
+**Complete automation suite** for Alrouf Lighting Technology featuring:
 - **Task 1**: Zapier RFQ Automation (No-code)
 - **Task 2**: Python Quotation Service + React Webapp
 - **Task 3**: RAG Knowledge Base + React Webapp
 
 **Both Python APIs and React webapp work together seamlessly!**
 
-## 🧪 API Testing & Examples
+## API Testing & Examples
 
 ### Quick Start - Test APIs First
 
 ```bash
 # 1. Start the API server
-cd /Users/basilmacbook/Desktop/tasks
+cd Alrouf_tasks
 source venv/bin/activate
 python simple_api_server.py
 
@@ -32,7 +32,7 @@ python python_client_examples.py
 
 #### **Start API Server**
 ```bash
-cd /Users/basilmacbook/Desktop/tasks
+cd Alrouf_tasks
 source venv/bin/activate
 python simple_api_server.py
 ```
@@ -230,11 +230,11 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
 successful = sum(1 for status, _ in results if status == 200)
 avg_time = sum(time for _, time in results) / len(results)
 
-print(f"✅ Successful requests: {successful}/10")
-print(f"⏱️ Average response time: {avg_time:.3f}s")
+print(f"Successful requests: {successful}/10")
+print(f"Average response time: {avg_time:.3f}s")
 ```
 
-## 🌐 React Webapp (Additional Interface)
+## React Webapp (Additional Interface)
 
 ### Overview
 **Modern web interface** for the same APIs with user-friendly forms and real-time interactions.
@@ -242,12 +242,12 @@ print(f"⏱️ Average response time: {avg_time:.3f}s")
 ### Start Webapp
 ```bash
 # Terminal 1: Start API Server
-cd /Users/basilmacbook/Desktop/tasks
+cd Alrouf_tasks
 source venv/bin/activate
 python simple_api_server.py
 
 # Terminal 2: Start React Webapp
-cd /Users/basilmacbook/Desktop/tasks/webapp
+cd Alrouf_tasks/webapp
 npm start
 ```
 
@@ -259,18 +259,18 @@ npm start
 ### Webapp Features
 
 #### **Quotation Service Interface**
-- 📝 **Form-based input** with validation
-- 💰 **Real-time price calculation**
-- 📧 **AI-generated email drafts**
-- 🌍 **Multi-language support** (Arabic/English)
-- 📤 **Export functionality** (copy/download)
+- **Form-based input** with validation
+- **Real-time price calculation**
+- **AI-generated email drafts**
+- **Multi-language support** (Arabic/English)
+- **Export functionality** (copy/download)
 
 #### **RAG Knowledge Base Interface**
-- 💬 **Interactive chat interface**
-- 🔍 **Smart search** with contextual understanding
-- 📚 **Source citations** and confidence scores
-- ⚡ **Real-time responses**
-- 🌍 **Arabic/English support**
+- **Interactive chat interface**
+- **Smart search** with contextual understanding
+- **Source citations** and confidence scores
+- **Real-time responses**
+- **Arabic/English support**
 
 ### Webapp Testing Guide
 
@@ -284,10 +284,10 @@ npm start
    - Add items with SKU, quantity, unit cost, margin
 3. Click "Generate Quotation"
 4. **Expected Result**: 
-   - ✅ Quotation ID generated
-   - ✅ Total amount calculated
-   - ✅ Email draft in selected language
-   - ✅ Copy/Export functionality
+   - Quotation ID generated
+   - Total amount calculated
+   - Email draft in selected language
+   - Copy/Export functionality
 
 #### **2. Test RAG Knowledge Base (Webapp)**
 1. Navigate to: http://localhost:3000/rag
@@ -297,12 +297,12 @@ npm start
    - English: `What is the warranty period?`
    - Arabic: `ما هي فترة الضمان؟`
 3. **Expected Result**:
-   - ✅ Intelligent answers
-   - ✅ Source citations
-   - ✅ Confidence scores
-   - ✅ Performance metrics
+   - Intelligent answers
+   - Source citations
+   - Confidence scores
+   - Performance metrics
 
-## 🎯 Task 1: RFQ Automation (No-Code)
+## Task 1: RFQ Automation (No-Code)
 
 ### Overview
 **Zapier workflow** for complete RFQ processing pipeline from email capture to CRM integration.
@@ -317,7 +317,7 @@ npm start
 - **Salesforce Log**: `task1_rfq_automation/zapier_workflow/sample_data/salesforce_mock_log.json`
 - **Auto-Reply Templates**: `task1_rfq_automation/zapier_workflow/sample_data/auto_reply_samples.json`
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.13+
@@ -389,7 +389,7 @@ cd webapp && npm start
 python python_client_examples.py
 ```
 
-## 🧪 Comprehensive Testing
+## Comprehensive Testing
 
 ### Test All Tasks
 ```bash
@@ -397,9 +397,9 @@ python python_client_examples.py
 python test_all_tasks.py
 
 # Expected output:
-# ✅ Task 1: RFQ Automation (Zapier) - PASSED
-# ✅ Task 2: Quotation Service (FastAPI) - PASSED  
-# ✅ Task 3: RAG Knowledge Base - PASSED
+# Task 1: RFQ Automation (Zapier) - PASSED
+# Task 2: Quotation Service (FastAPI) - PASSED  
+# Task 3: RAG Knowledge Base - PASSED
 ```
 
 ### Individual Task Testing
@@ -446,13 +446,13 @@ python generate_rag_qa_html.py
 ```
 
 **HTML Output Features:**
-- ✅ **Perfect Arabic text display** with proper RTL formatting
-- ✅ **Professional styling** with responsive design
-- ✅ **Cross-browser compatibility** - works in any web browser
-- ✅ **Sample Q&A examples** in both Arabic and English
-- ✅ **Source citations** and confidence scores
+- **Perfect Arabic text display** with proper RTL formatting
+- **Professional styling** with responsive design
+- **Cross-browser compatibility** - works in any web browser
+- **Sample Q&A examples** in both Arabic and English
+- **Source citations** and confidence scores
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 | Service | Response Time | Throughput | Accuracy | Cost |
 |---------|---------------|------------|----------|------|
@@ -460,7 +460,7 @@ python generate_rag_qa_html.py
 | **RAG API** | <1s | 50+ req/min | 90%+ | $0.02/query |
 | **Webapp** | <500ms | Real-time | 100% | Free |
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues & Solutions
 
@@ -488,7 +488,7 @@ print(response.json())
 tail -f logs/rag_knowledge.log
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Setup
 ```bash
@@ -510,14 +510,13 @@ VECTOR_DB_TYPE=faiss
 USE_MOCK_SERVICES=False
 ```
 
-## 📚 Documentation
+## Documentation
 
 - [Task 1 Details](docs/task1_rfq_automation.md)
 - [Task 2 Details](docs/task2_quotation_service.md)
 - [Task 3 Details](docs/task3_rag_knowledge.md)
-- [Project Summary](PROJECT_SUMMARY.md)
 
-## 📞 Support
+## Support
 
 - **Email**: basil@alrouf.com
 - **GitHub Issues**: [Create an issue](https://github.com/basilalashqar/Alrouf_tasks/issues)
@@ -525,4 +524,4 @@ USE_MOCK_SERVICES=False
 
 ---
 
-**Built with ❤️ for Alrouf Lighting Technology**
+**Built for Alrouf Lighting Technology**
