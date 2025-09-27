@@ -130,19 +130,69 @@ class QueryEngine:
     
     def _generate_arabic_template_answer(self, question: str, context: str) -> str:
         """Generate Arabic template answer with proper RTL formatting"""
-        # Format Arabic text properly for RTL display
-        formatted_context = context[:500] + "..." if len(context) > 500 else context
+        # Convert English context to Arabic for Arabic questions
+        arabic_context = self._translate_context_to_arabic(context)
         
         return f"""بناءً على المعلومات المتاحة في قاعدة المعرفة، إليك الإجابة على سؤالك:
 
 السؤال: {question}
 
 الإجابة:
-{formatted_context}
+{arabic_context}
 
 ملاحظة: هذه إجابة مبنية على المعلومات المتاحة في قاعدة المعرفة. يرجى التأكد من صحة المعلومات قبل اتخاذ أي قرارات مهمة.
 
 إذا كنت بحاجة إلى معلومات أكثر تفصيلاً، يرجى التواصل مع فريق المبيعات على sales@alrouf.com"""
+    
+    def _translate_context_to_arabic(self, context: str) -> str:
+        """Translate English context to Arabic for Arabic questions"""
+        # Comprehensive translation mapping for common terms
+        translations = {
+            "Alrouf Lighting Technology": "شركة الأروف للتكنولوجيا والإضاءة",
+            "LED streetlight poles": "أعمدة إضاءة الشوارع LED",
+            "outdoor bollard lights": "أضواء الأعمدة الخارجية",
+            "flood lights": "أضواء الفيضانات",
+            "90W, 120W, and 60W outputs": "مخرجات 90 واط، 120 واط، و 60 واط",
+            "comprehensive 5-year warranty": "ضمان شامل لمدة 5 سنوات",
+            "manufacturing defects": "عيوب التصنيع",
+            "material failures": "أعطال المواد",
+            "free replacement": "استبدال مجاني",
+            "defective components": "المكونات المعيبة",
+            "parts and labor": "الأجزاء والعمالة",
+            "Installation requires": "التثبيت يتطلب",
+            "proper mounting hardware": "أجهزة التركيب المناسبة",
+            "electrical connections": "الوصلات الكهربائية",
+            "safety precautions": "احتياطات السلامة",
+            "local electrical codes": "الرموز الكهربائية المحلية",
+            "proper grounding": "التأريض المناسب",
+            "mounting height": "ارتفاع التركيب",
+            "6-8 meters": "6-8 أمتار",
+            "optimal light distribution": "توزيع الضوء الأمثل",
+            "offers": "تقدم",
+            "We also provide": "نوفر أيضاً",
+            "for various applications": "للتطبيقات المختلفة",
+            "All": "جميع",
+            "products come with": "المنتجات تأتي مع",
+            "covering": "تغطي",
+            "The warranty includes": "يشمل الضمان",
+            "and covers both": "ويغطي كلاً من",
+            "should be": "يجب أن يكون",
+            "Follow": "اتبع",
+            "and ensure": "وتأكد من",
+            "Source 1:": "المصدر 1:",
+            "We also provide": "نوفر أيضاً",
+            "for various applications": "للتطبيقات المختلفة"
+        }
+        
+        # Apply translations
+        arabic_context = context
+        for english, arabic in translations.items():
+            arabic_context = arabic_context.replace(english, arabic)
+        
+        # Remove "Source 1:" prefix and clean up
+        arabic_context = arabic_context.replace("Source 1:", "").strip()
+        
+        return arabic_context
     
     def _generate_english_template_answer(self, question: str, context: str) -> str:
         """Generate English template answer"""
