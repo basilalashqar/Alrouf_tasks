@@ -390,6 +390,25 @@ print(result['answer'])
 "
 ```
 
+### RAG System Output
+The RAG system generates an HTML report with perfect Arabic text display:
+
+```bash
+# Generate RAG Q&A examples in HTML format
+python generate_rag_qa_html.py
+
+# Output: RAG_QA_Examples.html
+# Features: Perfect Arabic text display, professional styling
+# Access: Open RAG_QA_Examples.html in any web browser
+```
+
+**HTML Output Features:**
+- ✅ **Perfect Arabic text display** with proper RTL formatting
+- ✅ **Professional styling** with responsive design
+- ✅ **Cross-browser compatibility** - works in any web browser
+- ✅ **Sample Q&A examples** in both Arabic and English
+- ✅ **Source citations** and confidence scores
+
 ## 📊 Performance Metrics
 
 | Service | Response Time | Throughput | Accuracy | Cost |
