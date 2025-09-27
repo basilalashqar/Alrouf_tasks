@@ -363,11 +363,53 @@ npm start
 
 ## Task 1: RFQ Automation (No-Code)
 
-### Screenshots
-*[Screenshots of Zapier workflow setup and configuration will be added here]*
-
 ### Workflow Blueprint
-*[Zapier workflow blueprint and configuration details will be documented here]*
+
+**Stage 1: Intelligent Email Capture**
+- Trigger: New emails in Gmail INBOX
+- Smart Filtering: Only processes emails with "RFQ" in subject
+- Spam Protection: Excludes Zapier alerts, errors, and no-reply emails
+
+**Stage 2: AI-Powered Data Extraction**
+- AI Processing: Extracts key RFQ details using GPT-4o mini
+- Structured Output: Customer info, product details, quantities, timelines, requirements
+
+**Stage 3: Multi-System Data Distribution**
+- Google Sheets: Centralized RFQ tracking log
+- Salesforce: Creates prospect account with full email context
+- Google Drive: Archives all email attachments with organized naming
+
+**Stage 4: Customer Communication**
+- Auto-Reply: Bilingual confirmation (English/Arabic)
+- Professional Response: Sets expectations (24-48 hour response time)
+
+**Stage 5: Team Notification**
+- Slack Alert: Real-time notification to sales team
+- Action Summary: Shows all completed automated steps
+- Next Steps: Clear guidance for manual follow-up
+
+### Screenshots
+
+#### Zapier Workflow
+*[Screenshot of Zapier workflow interface showing the complete automation flow]*
+
+#### Gmail Integration
+*[Screenshot of Gmail trigger configuration and email filtering setup]*
+
+#### Google Sheets Output
+*[Screenshot of Google Sheets showing RFQ data capture and tracking]*
+
+#### Google Drive Organization
+*[Screenshot of Google Drive folder structure with archived email attachments]*
+
+#### Salesforce Integration
+*[Screenshot of Salesforce showing created prospect accounts and opportunity records]*
+
+#### Slack Notifications
+*[Screenshot of Slack channel showing automated notifications and team alerts]*
+
+#### Auto-Reply Examples
+*[Screenshots of sample auto-reply emails in both English and Arabic]*
 
 ### Quick Start Commands
 ```bash
