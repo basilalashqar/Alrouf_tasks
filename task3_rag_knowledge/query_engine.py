@@ -129,19 +129,20 @@ class QueryEngine:
             return self._generate_fallback_answer(question, search_results, language)
     
     def _generate_arabic_template_answer(self, question: str, context: str) -> str:
-        """Generate Arabic template answer"""
-        return f"""
-بناءً على المعلومات المتاحة في قاعدة المعرفة، إليك الإجابة على سؤالك:
+        """Generate Arabic template answer with proper RTL formatting"""
+        # Format Arabic text properly for RTL display
+        formatted_context = context[:500] + "..." if len(context) > 500 else context
+        
+        return f"""بناءً على المعلومات المتاحة في قاعدة المعرفة، إليك الإجابة على سؤالك:
 
 السؤال: {question}
 
 الإجابة:
-{context[:500]}...
+{formatted_context}
 
 ملاحظة: هذه إجابة مبنية على المعلومات المتاحة في قاعدة المعرفة. يرجى التأكد من صحة المعلومات قبل اتخاذ أي قرارات مهمة.
 
-إذا كنت بحاجة إلى معلومات أكثر تفصيلاً، يرجى التواصل مع فريق المبيعات على sales@alrouf.com
-        """.strip()
+إذا كنت بحاجة إلى معلومات أكثر تفصيلاً، يرجى التواصل مع فريق المبيعات على sales@alrouf.com"""
     
     def _generate_english_template_answer(self, question: str, context: str) -> str:
         """Generate English template answer"""
