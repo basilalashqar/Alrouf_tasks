@@ -32,6 +32,12 @@ Alrouf_tasks/
 ├── generate_rag_qa_pdf.py        # Q&A examples PDF generator
 ├── generate_rag_qa_fixed_pdf.py  # Fixed Arabic PDF generator
 ├── generate_rag_qa_html.py       # HTML generator with perfect Arabic
+├── start_webapp.py              # React webapp startup script
+├── webapp/                      # React web application
+│   ├── src/                     # React source code
+│   ├── public/                  # Public assets
+│   ├── package.json            # Node.js dependencies
+│   └── README.md               # Webapp documentation
 ├── RAG_System_Test_Report.pdf     # Basic test results
 ├── Detailed_RAG_Test_Results.pdf # Detailed technical report
 ├── RAG_QA_Examples.pdf          # Q&A examples (original)
@@ -297,6 +303,40 @@ USE_MOCK_SERVICES=True
 MOCK_OPENAI=True
 DEFAULT_LANGUAGE=en
 ```
+
+## 🌐 React Web Application
+
+### Overview
+**Modern web interface** for Task 2 (Quotation Service) and Task 3 (RAG Knowledge Base) with user-friendly forms and real-time interactions.
+
+### Features
+- 🎨 **Modern UI**: Clean, responsive design with professional styling
+- 📱 **Mobile Support**: Fully responsive across all devices
+- 🌍 **Multi-language**: Arabic and English interface support
+- ⚡ **Real-time**: Live API integration with backend services
+- 📊 **Analytics**: Performance metrics and confidence scores
+- 📤 **Export**: Copy and download functionality
+
+### Quick Start
+```bash
+# Start the React webapp
+python start_webapp.py
+
+# Or manually:
+cd webapp
+npm install
+npm start
+```
+
+### Access Points
+- **Dashboard**: http://localhost:3000
+- **Quotation Service**: http://localhost:3000/quotation
+- **RAG Knowledge Base**: http://localhost:3000/rag
+
+### Prerequisites
+- Node.js 18+ installed
+- Backend services running (Task 2 & Task 3)
+- npm package manager
 
 ## 🧪 Testing
 
