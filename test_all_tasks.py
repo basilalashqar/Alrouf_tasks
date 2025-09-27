@@ -22,43 +22,6 @@ def print_section(title):
     print(f"\n📋 {title}")
     print("-" * 40)
 
-def test_task1():
-    """Test Task 1: RFQ Automation (Zapier)"""
-    print_header("TASK 1: RFQ → CRM AUTOMATION (ZAPIER)")
-    
-    try:
-        # Test workflow simulation
-        sys.path.append('task1_rfq_automation')
-        from test_workflow import run_workflow_simulation
-        
-        print_section("Testing Zapier Workflow Simulation")
-        run_workflow_simulation()
-        
-        # Test sample data files
-        print_section("Testing Sample Data Files")
-        sample_files = [
-            'task1_rfq_automation/zapier_workflow/sample_data/google_sheets_sample.csv',
-            'task1_rfq_automation/zapier_workflow/sample_data/salesforce_mock_log.json',
-            'task1_rfq_automation/zapier_workflow/sample_data/auto_reply_samples.json',
-            'task1_rfq_automation/zapier_workflow/sample_data/error_log.json'
-        ]
-        
-        for file_path in sample_files:
-            if os.path.exists(file_path):
-                print(f"✅ {file_path} - Found")
-            else:
-                print(f"❌ {file_path} - Missing")
-        
-        print_section("Task 1 Results")
-        print("✅ Zapier workflow simulation: WORKING")
-        print("✅ Sample data files: VERIFIED")
-        print("✅ No-code automation: READY")
-        
-        return True
-        
-    except Exception as e:
-        print(f"❌ Task 1 Error: {e}")
-        return False
 
 def test_task2():
     """Test Task 2: Quotation Microservice"""
@@ -257,7 +220,6 @@ def generate_test_report():
     
     # Test all tasks
     tasks = [
-        ("Task 1: RFQ Automation", test_task1),
         ("Task 2: Quotation Service", test_task2),
         ("Task 3: RAG Knowledge Base", test_task3)
     ]
@@ -310,10 +272,9 @@ def main():
     print(f"Working Directory: {os.getcwd()}")
     
     # Check if we're in the right directory
-    if not os.path.exists('task1_rfq_automation') or not os.path.exists('task2_quotation_service') or not os.path.exists('task3_rag_knowledge'):
+    if not os.path.exists('task2_quotation_service') or not os.path.exists('task3_rag_knowledge'):
         print("❌ Error: Please run this script from the project root directory")
         print("Expected structure:")
-        print("  task1_rfq_automation/")
         print("  task2_quotation_service/")
         print("  task3_rag_knowledge/")
         sys.exit(1)
@@ -324,10 +285,9 @@ def main():
     if success:
         print("\n🎯 NEXT STEPS:")
         print("1. Review the test report: test_report.json")
-        print("2. Deploy Task 1: Configure Zapier workflow")
-        print("3. Deploy Task 2: Start FastAPI service")
-        print("4. Deploy Task 3: Initialize RAG system")
-        print("5. Upload to GitHub: git add . && git commit && git push")
+        print("2. Deploy Task 2: Start FastAPI service")
+        print("3. Deploy Task 3: Initialize RAG system")
+        print("4. Upload to GitHub: git add . && git commit && git push")
     else:
         print("\n🔧 TROUBLESHOOTING:")
         print("1. Check error messages above")
