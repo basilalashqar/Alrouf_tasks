@@ -14,6 +14,66 @@
 
 **Both Python APIs and React webapp work together seamlessly!**
 
+## Installation & Setup
+
+### Prerequisites
+- Python 3.13+
+- Node.js 18+
+- Git
+
+### Step 1: Clone Repository
+```bash
+git clone https://github.com/basilalashqar/Alrouf_tasks.git
+cd Alrouf_tasks
+```
+
+### Step 2: Install Python Requirements
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+### Step 3: Install Webapp Dependencies
+```bash
+# Navigate to webapp directory
+cd webapp
+
+# Install Node.js dependencies
+npm install
+
+# Return to project root
+cd ..
+```
+
+### Step 4: Environment Configuration (Optional)
+```bash
+# Copy environment template
+cp env.example .env
+
+# Edit .env with your API keys (optional for testing)
+# The system works with mock services by default
+```
+
+### Step 5: Verify Installation
+```bash
+# Test Python installation
+python --version
+pip list | grep fastapi
+
+# Test Node.js installation
+node --version
+npm --version
+```
+
 ## API Testing & Examples
 
 ### Quick Start - Test APIs First
@@ -316,66 +376,6 @@ npm start
 - **Google Sheets**: `task1_rfq_automation/zapier_workflow/sample_data/google_sheets_sample.csv`
 - **Salesforce Log**: `task1_rfq_automation/zapier_workflow/sample_data/salesforce_mock_log.json`
 - **Auto-Reply Templates**: `task1_rfq_automation/zapier_workflow/sample_data/auto_reply_samples.json`
-
-## Installation & Setup
-
-### Prerequisites
-- Python 3.13+
-- Node.js 18+
-- Git
-
-### Step 1: Clone Repository
-```bash
-git clone https://github.com/basilalashqar/Alrouf_tasks.git
-cd Alrouf_tasks
-```
-
-### Step 2: Install Python Requirements
-```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
-venv\Scripts\activate
-
-# Install Python dependencies
-pip install -r requirements.txt
-```
-
-### Step 3: Install Webapp Dependencies
-```bash
-# Navigate to webapp directory
-cd webapp
-
-# Install Node.js dependencies
-npm install
-
-# Return to project root
-cd ..
-```
-
-### Step 4: Environment Configuration (Optional)
-```bash
-# Copy environment template
-cp env.example .env
-
-# Edit .env with your API keys (optional for testing)
-# The system works with mock services by default
-```
-
-### Step 5: Verify Installation
-```bash
-# Test Python installation
-python --version
-pip list | grep fastapi
-
-# Test Node.js installation
-node --version
-npm --version
-```
 
 ### Quick Start Commands
 ```bash
