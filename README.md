@@ -391,7 +391,7 @@ print(result['answer'])
 ```
 
 ### RAG System Output
-The RAG system generates an HTML report with perfect Arabic text display:
+The RAG system includes an HTML report with perfect Arabic text display:
 
 ```bash
 # Generate RAG Q&A examples in HTML format
