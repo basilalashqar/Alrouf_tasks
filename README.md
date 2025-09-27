@@ -61,6 +61,14 @@ Complete automation suite for Alrouf Lighting Technology featuring:
 ![Reply Service](task1_rfq_automation/screenshots/Reply_service_zapier.png)
 *Auto-reply service configuration for bilingual customer communication*
 
+## How to Clone
+
+### Clone the Repository
+```bash
+git clone https://github.com/basilalashqar/Alrouf_tasks.git
+cd Alrouf_tasks
+```
+
 ## Quick Start
 
 ### 1. Install Python Dependencies
