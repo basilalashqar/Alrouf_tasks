@@ -13,6 +13,32 @@
 
 **Both Python APIs and React webapp work together seamlessly!**
 
+## Quick Test - Task 2 (Quotation Service)
+
+**Test the quotation service immediately:**
+
+```bash
+# Start the API server
+python3 simple_api_server.py
+
+# In another terminal, run the test
+python3 test_task2_fixed.py
+```
+
+**What you'll get:**
+- ✅ Live quotation generation with pricing calculations
+- ✅ Professional email drafts (English/Arabic)
+- ✅ Detailed email report saved as `email_report_YYYYMMDD_HHMMSS.txt`
+- ✅ Complete API testing with health checks
+
+**Example output:**
+```
+✅ Quotation ID: QUO-20250927-ABC123
+💰 Total: 45,590.14 SAR
+📧 Email Draft: Professional business email generated
+📄 Email report saved: email_report_20250927_143022.txt
+```
+
 ## Installation & Setup
 
 ### Prerequisites
