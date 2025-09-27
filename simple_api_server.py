@@ -155,11 +155,11 @@ Sales Team - Alrouf Lighting Technology
 async def query_rag(request: dict):
     """Query the RAG knowledge base"""
     
-    query = request.get("query", "")
+    query = request.get("question", request.get("query", ""))
     language = request.get("language", "en")
     
     # Simple responses based on keywords
-    if "product" in query.lower() or "منتج" in query:
+    if "product" in query.lower() or "منتج" in query or "offer" in query.lower() or "provide" in query.lower() or "sell" in query.lower():
         if language == "ar":
             answer = "تقدم شركة الأروف للتكنولوجيا والإضاءة أعمدة إضاءة الشوارع LED بقوة 90 واط و 120 واط و 60 واط. كما نوفر أضواء الأعمدة الخارجية وأضواء الفيضانات للتطبيقات المختلفة."
         else:
