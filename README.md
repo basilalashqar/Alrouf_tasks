@@ -391,25 +391,38 @@ npm start
 ### Screenshots
 
 #### Zapier Workflow
-*[Screenshot of Zapier workflow interface showing the complete automation flow]*
+![Zapier Workflow](zapier_workflow.png)
+*Complete Zapier automation workflow showing all 5 stages*
 
 #### Gmail Integration
-*[Screenshot of Gmail trigger configuration and email filtering setup]*
+![Gmail Zapier Service](gmail_zapier_service.png)
+*Gmail trigger configuration and email filtering setup*
 
 #### Google Sheets Output
-*[Screenshot of Google Sheets showing RFQ data capture and tracking]*
+![Spreadsheet Service](spreadsheet_service_zapier.png)
+*Google Sheets integration showing RFQ data capture and tracking*
 
 #### Google Drive Organization
-*[Screenshot of Google Drive folder structure with archived email attachments]*
+![Drive Service](drive_service_zapier.png)
+*Google Drive service configuration for email attachment archiving*
 
 #### Salesforce Integration
-*[Screenshot of Salesforce showing created prospect accounts and opportunity records]*
+![Salesforce Integration](Zapier_salesforce.png)
+*Salesforce service configuration for prospect account creation*
+
+![Salesforce Output](screenshot_from_salesforce.png)
+*Salesforce showing created prospect accounts and opportunity records*
 
 #### Slack Notifications
-*[Screenshot of Slack channel showing automated notifications and team alerts]*
+![Slack Service](slack_service_zapier.png)
+*Slack service configuration for team notifications*
+
+![Slack Output](Slack%20screenshot.png)
+*Slack channel showing automated notifications and team alerts*
 
 #### Auto-Reply Examples
-*[Screenshots of sample auto-reply emails in both English and Arabic]*
+![Reply Service](Reply_service_zapier.png)
+*Auto-reply service configuration for bilingual customer communication*
 
 ### Quick Start Commands
 ```bash
